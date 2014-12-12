@@ -1,0 +1,6 @@
+E:\DDisk\Proiecte\TriemliSpital\Triemli\Triemli\bin\Debug\Triemli.dll
+E:\DDisk\Proiecte\TriemliSpital\Triemli\Triemli\bin\Debug\Triemli.pdb
+E:\DDisk\Proiecte\TriemliSpital\Triemli\Triemli\obj\Debug\Triemli.dll
+E:\DDisk\Proiecte\TriemliSpital\Triemli\Triemli\obj\Debug\Triemli.pdb
+E:\DDisk\Proiecte\TriemliSpital\Triemli\Triemli\bin\Debug\Triemli.dll.config
+E:\DDisk\Proiecte\TriemliSpital\Triemli\Triemli\obj\Debug\Triemli.csprojResolveAssemblyReference.cache
