@@ -29,6 +29,51 @@ namespace Triemli
         //////        db.Query<MyTable>("WHERE MyColumn=@myValue", new {myValue = "test"})
         ////// for better performance
 
+        #region SELECT
+
+        public object GetScalar(string select, string from, string whereConditions)
+        {
+            var sql = PetaPoco.Sql.Builder
+                                            .Select("SELECT @0", select)
+                                            .From("@0", from)
+                                            .Where("@0", whereConditions);
+
+            return _currentDb.ExecuteScalar<object>(sql);
+        }
+
+
+        public object GetSingleOrDefault(string select, string from, string whereConditions)
+        {
+            var sql = PetaPoco.Sql.Builder
+                                            .Select("SELECT @0", select)
+                                            .From("@0", from);
+            
+            if (!String.IsNullOrEmpty(whereConditions))
+            {
+
+                sql
+                    .Where("@0", whereConditions);
+            }
+            
+            return _currentDb.FirstOrDefault<object>(sql);
+        }
+
+
+        public PetaPoco.Page<object> GetPaged(string select, string from, string whereConditions,int pageNumber, int itemsPerPage)
+        {
+            var sql = PetaPoco.Sql.Builder
+                                            .Select("SELECT @0", select)
+                                            .From("@0", from);
+
+            if (!String.IsNullOrEmpty(whereConditions))
+            {
+
+                sql
+                    .Where("@0", whereConditions);
+            }
+
+            return _currentDb.Page<object>(pageNumber, itemsPerPage, sql);
+        }
 
         public object GetData(string select, string from, string whereConditions)
         {
@@ -41,22 +86,34 @@ namespace Triemli
             return product;
         }
 
+        #endregion
 
+        #region UPDATE
+        
         public int UpdateData(object pocoObject)
         {
             return _currentDb.Update(pocoObject);
         }
+        
+        #endregion
 
-
+        #region DELETE
+        
         public int DeleteData(object pocoObject)
         {
             return _currentDb.Delete(pocoObject);
         }
+        
+        #endregion
 
+        #region INSERT
+        
         public void Insert(object pocoObject)
         {
             _currentDb.Insert(pocoObject);
         }
+        
+        #endregion
 
 
         #endregion
