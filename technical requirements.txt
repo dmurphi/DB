@@ -1,0 +1,8 @@
+
+	1. Supports multitenant databases, basically one per customer/ bunit.
+	2. Users tenant data will be contained in a separate db, which will give info regardinbg the 
+		particular db that each user is assigned to.
+	3. Supports multiple roles per db.
+	4. Token based authentication
+	5. MVC - REST based API, Angular/Knockout UI.
+	
