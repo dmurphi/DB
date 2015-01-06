@@ -4,5 +4,12 @@
 		particular db that each user is assigned to.
 	3. Supports multiple roles per db.
 	4. Token based authentication
-	5. MVC - REST based API, Angular/Knockout UI.
+	5. MVC - REST based API, JS/HTML5 based UI.
 	
+	Technical:
+		1. Angular/Knockout/Backbone - based UI interface.
+		2. PetaPoco based db layer.
+		3. DPAPI based data encryption for internal securing of the data.
+		4. Supports multi-server environment(web servers on cloud or CDN, multi-server db).
+		5. Supports external auth environments( Active DIrectory, f.e.).
+		6. 
